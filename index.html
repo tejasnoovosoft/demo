@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <title> Hii </title>
+  <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+
+    <div id="div1"> DIV 1 </div>
+    <button type="button" id="new-btn"> New Button </button>
+
+    <div id="parent">
+      <p> DOM1 in JAVASCRIPT </p>
+      <p> DOM2 in JAVASCRIPT </p>
+      <p id="gfg"> </p>
+      <ul id="list">
+        <li> Item 1 </li>
+        <li> Item 2 </li>
+        <li> Item 3 </li>
+        <li> Item 4 </li>
+      </ul>
+      <button type="button" onclick="addItem()"> Add New Item </button>
+      <button id="add-child" type="button" onclick="addChild()">Add a child</button>
+      <button id="remove-child" type="button" onclick="styleFun()">Remove child</button>
+    </div>
+  <script>
+    let a = document.getElementById("div1");
+    console.log(a.getAttribute("id"));
+
+    const button = document.querySelector("button");
+    button.setAttribute("name","submit");
+    function addItem(){
+      let itm = document.getElementById("list");
+      itm.innerHTML += `<li> Item ${itm.children.length + 1} </li>`
+    }
+    function styleFun(){
+      let a = document.getElementById("parent").querySelectorAll("p");
+      for(let i=0 ; i<a.length ; i++){
+        a[i].style.backgroundColor = "Red";
+      }
+    }
+
+    function addChild(){
+      const x = document.createElement("div");
+      const subX = document.createTextNode("Hii New Div");
+      x.appendChild(subX);
+
+      const currDiv = document.getElementById("parent");
+      document.body.insertBefore(x,currDiv);
+
+      document.getElementById("gfg").innerHTML = document.getElementById("gfg").innerHTML + "I'm new here..."
+    }
+
+  </script>
+</body>
+</html>
