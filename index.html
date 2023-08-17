@@ -22,6 +22,11 @@
       <button id="add-child" type="button" onclick="addChild()">Add a child</button>
       <button id="remove-child" type="button" onclick="styleFun()">Remove child</button>
     </div>
+
+  <div>
+    <h1> JAVASCRIPT EXERCISE </h1>
+  </div>
+
   <script>
     let a = document.getElementById("div1");
     console.log(a.getAttribute("id"));
@@ -38,7 +43,6 @@
         a[i].style.backgroundColor = "Red";
       }
     }
-
     function addChild(){
       const x = document.createElement("div");
       const subX = document.createTextNode("Hii New Div");
@@ -49,7 +53,6 @@
 
       document.getElementById("gfg").innerHTML = document.getElementById("gfg").innerHTML + "I'm new here..."
     }
-
   </script>
 </body>
 </html>
